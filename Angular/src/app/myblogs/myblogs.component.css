@@ -1,0 +1,38 @@
+*{
+        padding: 0px;
+        margin: 0px;
+}
+.head{
+        padding-top: 1rem;
+        font-size: 3rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 700;
+        text-align: center;
+        background-color: rgb(221, 221, 238);
+        height: 3.5rem;
+        border: 1px solid rgb(90, 88, 88);
+}
+.list{
+        list-style-type: none;
+}
+.list-head{     
+        padding-top: 2px;
+        font-weight: 600;
+        font-size: 4rem;
+        color: rgb(76, 71, 71);
+}
+.list-group{
+        padding: 30px;
+}
+.date{
+        color: rgb(76, 71, 71);
+}
+.box{
+        height: fit-content;
+        margin: 8px;
+        padding: 20px;
+}
+.options{
+        float: left;
+        display: inline;
+}

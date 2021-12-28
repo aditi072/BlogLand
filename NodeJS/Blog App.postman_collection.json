@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "20c03cad-8d01-4e43-9a1d-32d960c226e2",
+		"name": "Blog App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign-UP Basic Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\" : \"Latika Parolkar\",\r\n    \"email\" : \"latikaparolkar04@gmail.com\",\r\n    \"contact\" : 9112345689,\r\n    \"DOB\" : \"04-10-2001\",\r\n    \"password\" : \"Latika@04\",\r\n    \"confirmPassword\" : \"Latika@04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signUp/basicInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signUp",
+						"basicInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate User Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"latika54\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/checkusername",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"checkusername"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userCredential\" : \"9112345689\",\r\n    \"password\" : \"Latika@04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"61518d5f4f12332f241a8803\",\r\n    \"topic\" : \"Food\",\r\n    \"htmlContent\" : \"<p>The <b>HyperText Markup Language</b>,or <b>HTML</b>is the standard<a href=\\\"/wiki/Markup_language\\\"title='Markup language'>markup language</a> for documents designed to be displayed in a <a href='/wiki/Web_browser'title=''>web browser</a>.It can be assisted by technologies such as <a href='/wiki/Cascading_Style_Sheets'class='mw-redirect'title='Cascading Style Sheets'>Cascading Style Sheets</a> (CSS) and <a href='/wiki/Scripting_language' title='Scripting language'>scripting languages</a> such as <a href='/wiki/JavaScript' title='JavaScript'>JavaScript</a></p>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/addblog",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addblog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign-UP Personal Info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"61518d5f4f12332f241a8803\",\r\n    \"myTopics\" : [\"Food\", \"Finance\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signUp/personalInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signUp",
+						"personalInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forget Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"latikaparolkar04@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/forgetpassword/emaillink",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"forgetpassword",
+						"emaillink"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/verifyemail/latikaparolkar04@gmail.com?verifycode=9c4a1a5394e4ad4847fd766163e751c50dbce223&param=forgetpassword",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"verifyemail",
+						"latikaparolkar04@gmail.com"
+					],
+					"query": [
+						{
+							"key": "verifycode",
+							"value": "9c4a1a5394e4ad4847fd766163e751c50dbce223"
+						},
+						{
+							"key": "param",
+							"value": "forgetpassword"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MjQ2MTIyMDUsImV4cCI6MTYyNDYxNDAwNX0.5TUJSdOLT8LMuuoUyF7usC7tql84m-33QmbeFfWnX7o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogId\" : \"61518f86407d3881a800bde1\",\r\n    \"updatedHtmlContent\" : \"<p>The <byperText Markup Language</b>,or <b>HTML</b>is the standard<a href=\\\"/wiki/Markup_language\\\"title='Markup language'>markup language</a> for documents designed to be displayed in a <a href='/wiki/Web_browser'title=''>web browser</a>.It can be assisted by technologies such as <a href='/wiki/Cascading_Style_Sheets'class='mw-redirect'title='Cascadiheets'>Cascading Style Sheets</a>and <a href='/wiki/Scripting_language' title='Scripting language'>scripting languages</p>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/updateblog",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"updateblog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Blog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogId\" : \"61518f86407d3881a800bde1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/deleteblog",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deleteblog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogId\" : \"61519044bdef5112007bcfda\",\r\n    \"whoCommented\" : \"latika83\",\r\n    \"comment\" : \"ljg yf srdy ihjbh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/addcomment",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"addcomment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count Likes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogId\" : \"61519044bdef5112007bcfda\",\r\n    \"userName\" : \"latika83\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/countlikes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"countlikes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read blogs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\" : \"Food\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/readblogs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"readblogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\" : \"6148bf8d923acc2910f0e464\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/myblogs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"myblogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feed Blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/feedblog",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"feedblog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2MDgyYTEzOWFjNTBlOTY2NWMxY2FlNDciLCJwaG9uZU5vIjo4OTI1MzQ1Njg5fQ.HLzId4Iqlhz_19t5E2f8urJKvEDO5ooX8AKCg45PJag",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"blogId\" : \"61519044bdef5112007bcfda\",\r\n    \"commentId\" : \"6151916532e73648d8d61ec5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/deletecomment",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"deletecomment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

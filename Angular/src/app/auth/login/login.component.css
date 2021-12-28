@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.bg-img{
+  background: url('https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.bg-img:after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  padding: 60px 32px;
+  width: 370px;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,0.04);
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+#label{
+  text-align: center;
+  color: white;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 5px;
+  font-family: 'Montserrat',sans-serif;
+}
+.field{
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255,255,255,0.94);
+  margin-top: 3vh;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}
+.pass{
+  text-align: left;
+  margin: 10px 0;
+}
+.pass a{
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+}
+.pass:hover a{
+  text-decoration: underline;
+  color:  #3498db;
+}
+label{
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+  position: relative;
+  padding-top: 9px;
+  padding-right: 14px;
+  margin: 4px;
+  display: inline-block;
+}
+.signup{
+  font-size: 15px;
+  color: white;
+  font-family: 'Poppins',sans-serif;
+}
+.signup a{
+  color: #3498db;
+  text-decoration: none;
+}
+.signup a:hover{
+  text-decoration: underline;
+}
+
+.btn{
+  background: #3498db;
+  border: 1px solid #2691d9;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  font-family: 'Poppins',sans-serif;
+}
+.btn:hover{
+  font-size: 22px;
+}
+.error{
+  color: rgb(231, 83, 83);
+  font-family: 'Poppins',sans-serif;
+  float: left;
+  margin: 4px;
+}

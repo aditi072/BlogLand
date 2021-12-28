@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav id="navbar">
+  <div id="logo">
+    <img src="assets/img/shortlogo.png" alt="logo">
+  </div>
+  <h3>Your Story...</h3>
+  <br>
+</nav>
+<form [formGroup]="penForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Add title" class="title" formControlName="title">
+  <quill-editor [styles]="{height: '200px'}" formControlName="content"></quill-editor>
+
+  <button class="btn" style="background-color: green;" type="submit" (click)="onSave()">Save
+  </button>
+  <button class="btn" style="background-color: rgb(184, 37, 37);" (click)="onClear()">Clear
+  </button>
+  <button class="btn" style="background-color: rgb(184, 37, 37);" (click)="onCancel()" routerLink="/home">Cancel
+  </button>
+</form>
+<br><br><br>

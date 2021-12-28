@@ -1,0 +1,105 @@
+<body>  
+<div class="bg-img">
+  <div class="content"> 
+    <h2 id="label">Signup Form</h2>
+    <mat-horizontal-stepper>
+      <mat-step [stepControl]="SignupForm">
+        <form [formGroup]="SignupForm" (ngSubmit)="onNext()">
+          <ng-template matStepLabel>Basic Details</ng-template>
+          <div>
+            <div class="form-group field">
+              <label for="name">Name:</label>
+              <input type="text" formControlName="name" class="form-control">
+            </div>
+            <span *ngIf="!SignupForm.get('name').valid && SignupForm.get('name').touched" class="error">Name
+              is required*</span>
+            <div class="form-group field">
+              <label>Email:</label>
+              <input type="text" formControlName="email" class="form-control">
+            </div>
+            <div *ngIf="!SignupForm.get('email').valid && SignupForm.get('email').touched" class="error">
+              <div *ngIf="SignupForm.controls['email'].hasError('required')">Email is required*</div>
+              <div *ngIf="SignupForm.controls['email'].hasError('email')">Please Enter a valid Email</div>
+              <div *ngIf="SignupForm.controls['email'].hasError('maxlength')">Maximum length 30</div>
+            </div>
+            <div class="form-group field">
+              <label for="contact">Contact:</label>
+              <input type="text" formControlName="contact" class="form-control">
+            </div>
+            <div *ngIf="!SignupForm.get('contact').valid && SignupForm.get('contact').touched" class="error">
+              <div *ngIf="SignupForm.controls['contact'].hasError('required')">Contact is required*</div>
+              <div *ngIf="SignupForm.controls['contact'].hasError('pattern')">Please Enter a valid 10
+                digit contact</div>
+            </div>
+            <div class="form-group field">
+              <label>DOB:</label>
+              <input type="text" formControlName="dob" class="form-control" placeholder="DD-MM-YYYY">
+            </div>
+            <div *ngIf="!SignupForm.get('dob').valid && SignupForm.get('dob').touched" class="error">
+              <div *ngIf="SignupForm.controls['dob'].hasError('required')">DOB is required*</div>
+              <div *ngIf="SignupForm.controls['dob'].hasError('pattern')">Please enter the correct format
+              </div>
+            </div>
+
+            <div class="form-group field">
+              <label>Password:</label>
+              <input type="password" formControlName="password" class="form-control pass-key ">
+            </div>
+            <div *ngIf="!SignupForm.get('password').valid && SignupForm.get('password').touched" class="error">
+              <div *ngIf="SignupForm.controls['password'].hasError('required')">Password is required*</div>
+              <div *ngIf="SignupForm.controls['password'].hasError('minlength')">Minimum length 6</div>
+              <div *ngIf="SignupForm.controls['password'].hasError('pattern')">Please enter the correct
+                format(Uppercase, Lowercase ,Number & Symbol)</div>
+            </div>
+            <div class="form-group field">
+              <label>ConfirmPassword:</label>
+              <input type="password" formControlName="confirm_password" class="form-control pass-key">
+            </div>
+            <div *ngIf="!SignupForm.get('confirm_password').valid && SignupForm.get('confirm_password').touched"
+              class="error">
+              <div *ngIf="SignupForm.controls['confirm_password'].hasError('required')">Password Confirmation is
+                required*</div>
+              <p class="error" *ngIf="SignupForm.controls['confirm_password'].errors.confirmedValidator">
+                Password does not match
+              </p>
+            </div>
+            <button class="nextbtn" mat-button matStepperNext [disabled]="!SignupForm.valid">Signup
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="SignupForm2">
+        <form [formGroup]="SignupForm2" (ngSubmit)="onSubmit()">
+          <div *ngIf="Submit!=false show" class="note2">
+            Please Verify your Email : valid for 10min
+          </div>
+          <ng-template matStepLabel>Profile Details</ng-template>
+          <div class="form-group field">
+            <label>Username:</label>
+            <input type="text" formControlName="userName" >
+          </div>
+          <div *ngIf="!SignupForm2.get('userName').valid && SignupForm2.get('userName').touched" class="error">
+            Username is required </div>
+          <div class="form-group field">
+            <label>Bio:</label>
+            <input type="text" formControlName="bio">
+          </div>
+            <div class="form-group checkbox">
+              <label>TopicsInterested:</label>
+              <div *ngFor="let data of Data; let i=index">
+              <label class="names">
+                <input type="checkbox" [value]="data.value" (change)="onCheckboxChange($event)" />
+                {{data.name}}
+              </label>
+            </div>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious class="backbtn">Back</button>
+            <button mat-button matStepperNext class="btn" (click)="genuserName()">Go!</button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
+</body>

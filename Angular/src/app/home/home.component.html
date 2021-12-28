@@ -1,0 +1,45 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <img src="assets/img/logo.PNG" alt="logo">
+    </div>
+    <ul>
+      <div class="dropdown-menu" *ngIf="isAuthenticated">
+        <button class="menu-btn">☰</button>
+        <div class="menu-content">
+          <li routerLinkActive="active"><a routerLink="/pendown" class="links-hidden">Pen a blog</a></li>
+          <li routerLinkActive="active"><a routerLink="/myBlogs" class="links-hidden">My Blogs</a></li>
+          <li routerLinkActive="active"><a routerLink="/contact" class="links-hidden">More</a></li>
+        </div>
+      </div>
+      <li routerLinkActive="active"><a *ngIf="isAuthenticated" class="login" (click)="onLogout()">Logout</a></li>
+      <li routerLinkActive="active"><a routerLink="/signup" *ngIf="!isAuthenticated" class="start">Signup</a></li>
+      <li routerLinkActive="active"><a routerLink="/login" *ngIf="!isAuthenticated" class="login">Login</a></li>
+    </ul>
+  </nav>
+
+  <div id="header">
+    <h1 id="Heading">BLOGLAND</h1>
+    <p>A Direction towards your stories..A Directory to new minds</p>
+  </div>
+
+  <div id="container">
+
+    <section class="rightcolumn">
+      <div class="box about">
+        <h2>About</h2>
+        <p>Blogland provides a platform where thought-leaders, journalists, experts, and individuals with unique perspectives can share their thinking. You’ll find pieces by independent writers from around the globe, stories we feature and leading authors, and smart takes on our own suite of blogs and publications.</p>
+      </div>
+      <div class="box pic">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS44A35gCcJ7uARsFUFpFhvk8srjVs9hPXBA&usqp=CAU" alt="DO THE 'WRITE THINGS'">
+      </div>
+    </section>
+
+    <app-blogs></app-blogs>
+  </div>
+</body>

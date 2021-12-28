@@ -1,0 +1,35 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="box">
+    <ul class="list">
+        <ng-container *ngFor="let post of loadedFeed">
+            <li class="list-group" *ngFor="let blog of post.blogs">
+                <h1 class="list-head">{{ blog.topic | htmlToPlaintext}}
+                    <div class="like" id = {{blog._id}} (click)="onLike(id)" >
+                        <input type="checkbox" class="like-btn">
+                        <i id = "heart" class="fa fa-heart"></i>
+                        <p></p>
+                   </div>
+                </h1>
+            
+                <p class="list-content">{{ blog.blogContent | htmlToPlaintext }}</p>
+
+                <!-- <img [src]= "blog.blogContent.img" [alt]= "blog.topic">   -->
+
+                <!-- <script>
+                    var parser = new DOMParser();
+                    var doc = parser.parseFromString(html, 'text/html');
+                    var imgTags = doc.getElementsByTagName("img");
+                    console.log(imgTags);
+                </script> -->
+
+                <p class="list-content btn" (click)="onReadMore()">Read More..</p>
+                <br>
+                <hr>
+            </li>
+        </ng-container>
+        
+    </ul>
+    <app-blog-card></app-blog-card>
+</div>

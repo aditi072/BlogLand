@@ -1,0 +1,111 @@
+*{
+    margin: 3px;
+    padding: auto;
+}
+img{
+    height:8vh;
+    width:11vh;
+    position: relative;
+    margin-left: 12px;
+}
+h2{
+    text-align: center;
+    font-size: 7vh;
+    font-family: 'Averia Serif Libre', cursive;
+    padding: 12px;
+    margin-left: 95px;
+    position: absolute;
+}
+.main{
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    line-height: 40px;
+    margin-top: 5px;
+    padding: 10px;
+}
+.image{
+    background: url("https://images.unsplash.com/photo-1495106245177-55dc6f43e83f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjV8fGJsb2clMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center center/cover;
+    height: 70%;
+    width: 80%;
+    padding: 5px;
+    margin: 30px;
+}
+/* right */
+.right{
+    float: right;
+    /* margin: 2px; */
+    height: 45%;
+    width: 50%;
+    background: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjR8fGJsb2clMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60") no-repeat center center/cover;
+}
+/* left */
+.left{
+    float: left;
+    margin: autp;
+    height: 10%;
+    width: 40%;
+    text-align: center;
+    line-height: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding-left: 10vh;
+    padding-top: 10vh;
+}
+.btn{
+    border-radius: 4px;
+    margin: 4px;
+    height: 50px;
+    width: 150px;
+    background-color:white;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;  
+    font-weight: 700;
+}
+.btn:hover{
+    transition: 1s ease-in-out;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+/* info div */
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: 700;
+    transition: 1s ease-in-out;
+}
+.matter{
+    margin: 6px;
+    width: 80%;
+}
+#info{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding: 30px;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(-90deg, #22df97, #f17de2, #24e2d2, #7e1bdb);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    margin: 20px;
+}
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+#more{
+    line-height: 38px;
+    font-size: 2rem;
+}

@@ -1,0 +1,48 @@
+#navbar{
+    display: inline;
+    position: relative;
+}
+#logo{
+  position: relative;
+  display: inline;
+}
+h3{
+    display: inline;
+    font-size: 1.5rem;
+    color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 20px;
+}
+.btn{
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 10px;
+    padding: 4px;
+    padding-right: 10px;
+    float: left;
+}
+
+.title{
+    width: 100%;
+    height: 15px;
+    border: 1px solid rgb(212, 210, 210);
+    padding: 10px;
+    margin: 0px 0px 7px 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.msg{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: green;
+    font-size: 1rem;
+}
+  

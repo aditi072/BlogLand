@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+    --like-font-size: 3rem 
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.box{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    margin-top: 155px;
+}
+.img{
+    float: left;
+    height: 22vh;
+    width: 46%;
+}
+.list{
+    list-style-type: none;
+    /* padding: 10px; */
+}
+.list-group{
+    margin: 8px;
+    padding: 20px;
+}
+.list-head{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    font-size: 30px;
+    font-weight: 500;
+}
+.list-content{
+    cursor: pointer;
+    color: rgb(70, 63, 63);
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+}
+hr{
+    width: 100%;
+}
+
+/* Like */
+.like{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 12px;
+    float: right;
+    -webkit-font-smoothing: antialiased;
+}
+.like-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.5s;
+  opacity: 0;
+  z-index: 2;
+}
+#heart{
+  padding-bottom: 4px;
+}
+.fa-heart{
+  position: absolute;
+  font-size: var(--like-font-size);
+  -webkit-text-stroke: 2px #e5e5e5;
+  color: whitesmoke;
+  transition: all ease-in-out;
+}
+.like-btn:checked + .fa-heart{
+  color: red;
+  -webkit-text-stroke: 1px red;
+  animation: .5s linear burst; 
+}
+@keyframes burst{
+  0%,10%{
+      transform: scale(1);
+      opacity: .5;
+      color:lavender;
+  }
+  45%{
+      transform: scale(.2) rotate(30deg);
+      opacity: .75;
+  }
+  50%{
+      transform: scale(2) rotate(-37.5deg);
+      opacity: 1;
+      color: red;
+      text-shadow: 2px 2px 6px rgba(235, 9, 9, 0.5);
+  }
+  90%,95%{
+      transform: scale(1) rotate(10deg);
+      text-shadow: none;
+  }
+  100% {
+      transform: rotate(-2.5deg);
+  }
+}
+

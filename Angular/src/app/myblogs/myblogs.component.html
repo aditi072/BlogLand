@@ -1,0 +1,28 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<h1 class='head'> My Blogs</h1>
+<div class="box">
+    <p *ngIf="loadedPosts.length < 1">No Posts available!</p>
+
+    <ul class="list" *ngIf="loadedPosts.length >= 1">
+        <ng-container *ngFor="let post of loadedPosts">
+            <li class="list-group" *ngFor="let blog of post.blogs;let i = index">
+                <h1 class="list-head">{{ blog.topic }}</h1>
+                <p class="date">Created - {{ blog.createdAt }}</p>
+                <div class="options">
+                    <button class="btn"> Edit <i class="fa fa-edit"></i></button>
+                    <button (click)="deleteBlog(blog._id, i)" class="btn"> Delete <i class="fa fa-trash"></i></button>
+                </div>
+                <br>
+                <p [innerHTML]="blog.blogContent"></p>
+                <hr>
+            </li>
+        </ng-container>
+
+    </ul>
+</div>

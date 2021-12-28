@@ -1,0 +1,32 @@
+<div class="bg-img">
+    <div class="content">
+        <div class="error" *ngIf = "error">
+            <p>{{error}}</p>
+        </div>
+        <label id="label">Login Form</label>
+        <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+            <div class=" form-group field">
+                <label>Email</label>
+                <input type="text" id="email" formControlName="email" class="form-control" placeholder="Email or Phone">
+            </div>
+            <span *ngIf="!LoginForm.get('email').valid && LoginForm.get('email').touched" class="error">Please enter a valid email or Phone No.</span>
+            <div class="form-group field space">
+                <label for="password">Password</label>
+                <input type="password" class="form-control pass-key" formControlName="password" placeholder="Password">
+            </div>
+            <div *ngIf="!LoginForm.get('password').valid && LoginForm.get('password').touched && LoginForm.controls['password'].hasError('minlength')" class="error">Minimum length 5</div>  
+    <br>
+    <div class="pass">
+        <a (click)="forgotPassword()">Forgot Password?</a>
+    </div>
+    <div class="error" *ngIf= "reset">Please check your email</div>
+    <button class="btn" type="submit" [disabled]="!LoginForm.valid">Login</button>
+    </form>
+    <div class="signup" (click)="onSignup()">
+        <li class="active" style="list-style-type: none; margin: 10px;">
+            Don't have account?
+            <a routerLink="/signup">Signup Now</a>
+        </li>
+    </div>
+</div>
+</div>
